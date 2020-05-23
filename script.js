@@ -12,16 +12,27 @@ function writePassword() {
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", makePassword);
+generateBtn.addEventListener("click", generatePass);
 
-function makePasswd() {
-    var password = '';
-    var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    for (i=1;i<8;i++) {
-      var c = Math.floor(Math.random()*chars.length + 1);
-      passwd += chars.charAt(c)
+function generatePass(pLength){
+
+    var keyListAlpha="abcdefghijklmnopqrstuvwxyz",
+        keyListInt="123456789",
+        keyListSpec="!@#_",
+        password='';
+    var len = Math.ceil(pLength/2);
+    len = len - 1;
+    var lenSpec = pLength-2*len;
+
+    for (i=0;i<len;i++) {
+        password+=keyListAlpha.charAt(Math.floor(Math.random()*keyListAlpha.length));
+        password+=keyListInt.charAt(Math.floor(Math.random()*keyListInt.length));
     }
-  
+
+    for (i=0;i<lenSpec;i++)
+        password+=keyListSpec.charAt(Math.floor(Math.random()*keyListSpec.length));
+
+    password=password.split('').sort(function(){return 0.5-Math.random()}).join('');
+
     return password;
-  
-  }
+}
