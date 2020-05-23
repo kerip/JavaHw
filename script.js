@@ -10,22 +10,18 @@ function writePassword() {
 
 }
 
+
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", makePassword);
 
-var lowerCasedigit = "abcdefghijklmnopqrstuvwxyz",
-    upperCasedigit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    numericDigit = "123456789",
-    symbolDigit = "~!#$%^&*()_<>?"
-
-    password = "";
-
-javascript:(
-
-function(){
-    prompt("Your Password")
-        Math.random().toString(36).slice(2) +
-        Math.random().toString(36).slice(2)
-    );
-
-}
+function makePasswd() {
+    var password = '';
+    var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    for (i=1;i<8;i++) {
+      var c = Math.floor(Math.random()*chars.length + 1);
+      passwd += chars.charAt(c)
+    }
+  
+    return password;
+  
+  }
