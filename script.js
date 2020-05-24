@@ -22,14 +22,10 @@ function generatePassword() {
 
 var criteria = prompt("How many characters will your password include? Choose between 8-128 characters.");
 
-if (criteria >8) {
+if (criteria > 8 && criteria < 128) {
     alert ("Your number (" + criteria + ") is matches requirements", "");
-}    else if (criteria <8) {
-    prompt ("Your number (" + criteria + ") does not match requirements. Please choose a number between 8-128.", "");
-
-}  
-if (criteria <128) {
-    alert ("Your number (" + criteria + ") is matches requirements", "");
+}   else if (criteria <8 && criteria > 128) {
+    prompt ("Your number (" + criteria + ") does not match requirements. Please choose a number between 8-128.", ""); 
 }   else if (criteria >128) {
     prompt ("Your number (" + criteria + ") does not match requirements. Please choose a number between 8-128.", "");
 }
