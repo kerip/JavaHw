@@ -22,10 +22,13 @@ function generatePassword() {
 
 var criteria = prompt("How many characters will your password include? Choose between 8-128 characters.");
 
-if (criteria) {
-     alert("This must be a number");
+if (criteria= 8 < 128) {
+    document.write ("Your number (" + criteria + ") is matches requirements", "");
+} else if (isNaN(criteria)) {
+    parseInt (prompt("Please enter a number 8-128.", ""));
+} else {
+    parseInt(prompt("Please enter a number 8-128.", ""));
 }
-
 
     for (var i = 0, n = charset.length; i < length; ++i) {
         retVal += charset.charAt(Math.floor(Math.random() * n));
