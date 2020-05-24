@@ -23,15 +23,13 @@ function generatePassword() {
 var criteria = prompt("How many characters will your password include? Choose between 8-128 characters.");
 
 if (criteria > 8 && criteria < 128) {
-    alert ("Your number (" + criteria + ") is matches requirements", "");
-    prompt ("Will your password include a special character", "");
-}   else if (criteria <8 && criteria > 128) {
-    prompt ("Your number (" + criteria + ") does not match requirements. Please choose a number between 8-128.", ""); 
-}   else if (criteria >128) {
-    prompt ("Your number (" + criteria + ") does not match requirements. Please choose a number between 8-128.", "");
+    alert ("Your number (" + criteria + ") matches requirements", "");
+} if (criteria < 8 || criteria > 128) {
+    alert ("Your number (" + criteria + ") does not match requirements. Please choose a number between 8-128.", ""); 
 }
-
-
+if ( criteria > 8 && criteria <128) {
+    prompt("Will your password include a special character?", "");
+}
 
     for (var i = 0, n = charset.length; i < length; ++i) {
         retVal += charset.charAt(Math.floor(Math.random() * n));
