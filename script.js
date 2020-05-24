@@ -24,6 +24,7 @@ var criteria = prompt("How many characters will your password include? Choose be
 
 if (criteria > 8 && criteria < 128) {
     alert ("Your number (" + criteria + ") is matches requirements", "");
+    prompt ("Will your password include a special character", "");
 }   else if (criteria <8 && criteria > 128) {
     prompt ("Your number (" + criteria + ") does not match requirements. Please choose a number between 8-128.", ""); 
 }   else if (criteria >128) {
